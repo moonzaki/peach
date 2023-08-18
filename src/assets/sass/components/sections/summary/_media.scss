@@ -1,0 +1,137 @@
+@use "~common/mixins" as m;
+@use "summary" as s;
+
+.#{s.$parent} {
+    @include m.media(
+        (
+            max: 1023,
+        ),
+        (
+            column-gap: 50px,
+        )
+    );
+
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            column-gap: 8px,
+            // column-gap: 0px,
+            row-gap: 24px,
+            padding: 0 13px,
+        )
+    );
+
+    &__item:nth-child(1) {
+        @include m.media(
+            (
+                max: 320,
+            ),
+            (
+                max-width: 120px,
+                justify-content: flex-start,
+            )
+        );
+
+        .#{s.$parent}__item-title {
+            @include m.media(
+                (
+                    max: 320,
+                ),
+                (
+                    gap: 6px,
+                    justify-content: flex-start,
+                )
+            );
+        }
+    }
+
+    &__item:nth-child(5) {
+        .#{s.$parent}__item-text {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    line-height: 120%,
+                )
+            );
+        }
+    }
+
+    &__item {
+        @include m.media(
+            (
+                min: 1921,
+            ),
+            (
+                width: calc((100% - 185px * 2) / 3),
+                white-space: nowrap,
+            )
+        );
+
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                width: calc((100% - 50px) / 2),
+                text-align: center,
+                flex-grow: 1,
+            )
+        );
+
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                width: calc((100% - 8px) / 2),
+                text-align: center,
+            )
+        );
+
+        strong {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    letter-spacing: -1px,
+                )
+            );
+        }
+
+        &-title {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    justify-content: center,
+                )
+            );
+
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    font-size: 40px,
+                )
+            );
+        }
+
+        &-text {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    font-size: 16px,
+                )
+            );
+        }
+    }
+}

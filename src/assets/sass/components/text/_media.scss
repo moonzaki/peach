@@ -1,0 +1,78 @@
+@use "~common/mixins" as m;
+@use "text" as t;
+
+.#{t.$title} {
+    &--ex-lg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 80px,
+            )
+        );
+    }
+    &--lg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 56px,
+            )
+        );
+    }
+    &--mg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 40px,
+            )
+        );
+    }
+    &--sg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 32px,
+            )
+        );
+    }
+    &--ex-sg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 24px,
+            )
+        );
+    }
+}
+
+.#{t.$text} {
+    &--ex-lg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 18px,
+            )
+        );
+    }
+    &--lg {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                font-size: 17px,
+            )
+        );
+    }
+}

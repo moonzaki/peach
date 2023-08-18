@@ -1,0 +1,19 @@
+@use "./../header" as h;
+@forward "~common/placeholders";
+
+.#{h.$parent}-nav {
+    &__list {
+        @extend %proxima-semibold;
+        @extend %flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        a {
+            line-height: 111.111%;
+        }
+    }
+}

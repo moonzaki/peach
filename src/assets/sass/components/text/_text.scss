@@ -1,0 +1,251 @@
+@use "~common/mixins" as m;
+@forward "~common/placeholders";
+
+$title: "title";
+$text: "text";
+
+.#{$title} {
+    line-height: 100%;
+
+    &--ex-lg {
+        @include m.adaptiv-font(80, 40);
+    }
+
+    &--lg {
+        @include m.adaptiv-font(56, 28);
+    }
+
+    &--mg {
+        @include m.adaptiv-font(40, 22);
+    }
+
+    &--sg {
+        @include m.adaptiv-font(32, 16);
+    }
+
+    &--ex-sg {
+        @include m.adaptiv-font(24, 20);
+    }
+
+    &--fw {
+        &-600 {
+            @extend %fw-600;
+        }
+
+        &-400 {
+            @extend %fw-400;
+        }
+    }
+}
+
+.#{$text} {
+    line-height: 100%;
+
+    &--ex-lg {
+        @include m.adaptiv-font(18, 16);
+    }
+
+    &--lg {
+        @include m.adaptiv-font(17, 16);
+    }
+
+    &--mg {
+        font-size: 16px;
+    }
+
+    &--sg {
+        font-size: 14px;
+    }
+
+    &--ex-sg {
+        font-size: 12px;
+    }
+
+    &--fw {
+        &-600 {
+            @extend %fw-600;
+        }
+
+        &-400 {
+            @extend %fw-400;
+        }
+    }
+}
+
+// Меню
+/*
+font-size: 18px;
+font-weight: 600;
+line-height: 111.111%;
+
+media --- 320
+font-size: 14px;
+line-height: 114.286%;
+*/
+
+// Заголовок первой секции, пятой секции, шестой секции, седьмой секции, восьмой секции
+/*
+font-size: 56px;
+font-style: normal;
+font-weight: 600;
+line-height: 100%;
+
+media --- 320
+font-size: 28px; 
+*/
+
+// Кнопка
+/*
+font-size: 18px;
+font-weight: 600;
+line-height: 111.111%;src/assets/sass/components/text/_text.scss
+
+media --- 320
+font-size: 16px;
+*/
+
+// Вторая секция текст
+/*
+font-size: 32px;
+font-weight: 600;
+line-height: 120%; 
+
+media --- 320
+font-size: 16px; 
+*/
+
+// Третья секция цифры/текст
+/*
+font-size: 80px;
+font-weight: 600;
+line-height: 80%; 
+
+media --- 320
+font-size: 40px; 
+*/
+
+// Третья секция тест
+/*
+font-size: 18px;
+font-weight: 400;
+line-height: 150%;
+
+media --- 320
+font-size: 16px;
+*/
+
+// Карта заголовок
+/*
+font-size: 24px;
+font-weight: 600;
+line-height: 100%;
+
+media --- 320
+font-size: 20px;
+*/
+
+// Карта горизонтальный список
+/*
+font-size: 18px;
+font-weight: 600;
+line-height: 111.111%;
+
+media --- 320
+font-size: 14px; 
+line-height: 114.286%;
+*/
+
+// Карта внутри выпадающего списка - заголовок
+/*
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 111.111%; 
+
+media --- 320
+font-size: 14px; 
+line-height: 100%; 
+*/
+
+// Карта внутри выпадающего списка - элементы
+/*
+font-size: 18px;
+font-weight: 400;
+line-height: 20px; 
+
+media --- 320
+font-size: 14px; 
+line-height: 100%; 
+*/
+
+// Карта названия городов большие
+/*
+font-size: 16px;
+font-weight: 600;
+line-height: 100%;
+*/
+
+// Карта названия городов средние
+/*
+font-size: 12px;
+font-weight: 600;
+line-height: 100%;
+*/
+
+// Карта названия городов маленькие
+/*
+font-size: 12px;
+font-weight: 600;
+line-height: 100%; 
+*/
+
+// Текст пятой сецкии
+/*
+font-size: 32px;
+font-weight: 400;
+line-height: 150%;
+
+media --- 320
+font-size: 16px;
+line-height: 130%; 
+*/
+
+// Заголовки в аккордеоне шестой секции
+/*
+font-size: 24px;
+font-weight: 600;
+line-height: 100%;
+
+media --- 320
+font-size: 20px;
+*/
+
+// Текст в аккордеоне шестой секции
+/*
+font-size: 17px;
+font-weight: 400;
+line-height: 140%;
+
+media --- 320
+font-size: 16px;
+*/
+
+// Заголовки седьмой секции
+/*
+font-size: 40px;
+font-weight: 600;
+line-height: 120%;
+
+media --- 320
+font-size: 22px; 
+*/
+
+// Текст седьмой секции
+/*
+font-size: 18px;
+font-weight: 400;
+line-height: 110%; 
+
+media --- 320
+font-size: 16px; 
+*/

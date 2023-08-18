@@ -1,0 +1,25 @@
+@use "~common/mixins" as m;
+@use "info" as inf;
+
+.#{inf.$parent} {
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            min-height: 300px,
+        )
+    );
+
+    &__content {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                padding: 40px 5px 96px,
+                gap: 20px,
+            )
+        );
+    }
+}

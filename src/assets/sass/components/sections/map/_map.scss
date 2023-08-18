@@ -1,0 +1,12 @@
+@use "~rfs/scss" as rfs;
+@forward "~common/placeholders";
+
+$parent: "map";
+
+.#{$parent} {
+    position: relative;
+
+    &__title {
+        margin: 0;
+    }
+}

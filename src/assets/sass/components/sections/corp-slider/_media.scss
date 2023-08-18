@@ -1,0 +1,48 @@
+@use "~common/mixins" as m;
+@use "corp-slider" as cs;
+
+.#{cs.$parent} {
+    @include m.media(
+        (
+            max: 1023,
+        ),
+        (
+            padding: 0 5px,
+            box-sizing: border-box,
+        )
+    );
+    &__control {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                display: none,
+            )
+        );
+    }
+
+    &__title {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                margin-bottom: 15px,
+            )
+        );
+    }
+
+    .#{cs.$slider} {
+        &-pagination {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    display: none,
+                )
+            );
+        }
+    }
+}

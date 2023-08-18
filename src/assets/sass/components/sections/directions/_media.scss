@@ -1,0 +1,131 @@
+@use "~common/mixins" as m;
+@use "./directions" as d;
+
+.#{d.$parent} {
+    &-title {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                margin-bottom: 16px,
+            )
+        );
+    }
+
+    @include m.media(
+        (
+            max: 1280,
+        ),
+        (
+            padding: 0 5px,
+        )
+    );
+
+    @include m.media(
+        (
+            max: 1023,
+        ),
+        (
+            row-gap: 10px,
+        )
+    );
+
+    &__item {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                width: 100%,
+            )
+        );
+
+        &-head {
+            span {
+                @include m.media(
+                    (
+                        min: 1024,
+                    ),
+                    (
+                        display: none,
+                    )
+                );
+            }
+        }
+
+        &-title {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    min-height: 60px,
+                    padding: 10px 10px,
+                )
+            );
+        }
+
+        &-text {
+            p {
+                @include m.media(
+                    (
+                        max: 1023,
+                    ),
+                    (
+                        min-height: 60px,
+                        padding: 0px 10px 80px,
+                    )
+                );
+            }
+        }
+
+        &-background {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    position: absolute,
+                    top: 0,
+                    left: 0,
+                    width: 100%,
+                    // height: 100%,
+                )
+            );
+
+            picture {
+                @include m.media(
+                    (
+                        max: 1023,
+                    ),
+                    (
+                        height: 100%,
+                    )
+                );
+
+                img {
+                    @include m.media(
+                        (
+                            max: 1023,
+                        ),
+                        (
+                            object-fit: cover,
+                        )
+                    );
+                }
+            }
+        }
+
+        &-content {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    position: static,
+                )
+            );
+        }
+    }
+}

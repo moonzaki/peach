@@ -1,0 +1,35 @@
+@use "~common/mixins" as m;
+@use "./header" as h;
+
+.#{h.$parent} {
+    @include m.media(
+        (
+            min: 1920,
+        ),
+        (
+            padding: 29px 70px,
+        )
+    );
+
+    @include m.media(
+        (
+            max: 1023,
+        ),
+        (
+            flex-direction: column,
+            gap: 16px,
+            align-items: flex-start,
+            text-align: left,
+        )
+    );
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            padding: 15px 5px,
+            align-items: flex-start,
+            text-align: left,
+        )
+    );
+}

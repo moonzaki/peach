@@ -1,0 +1,83 @@
+@use "~common/mixins" as m;
+@use "benefits" as b;
+
+.#{b.$parent} {
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            gap: 24px,
+            padding: 24px 0,
+        )
+    );
+
+    &__row {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                gap: 25px,
+                padding: 0 5px,
+            )
+        );
+    }
+
+    &__line {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                margin: 0 5px,
+            )
+        );
+    }
+
+    &__row:nth-child(1) {
+        .#{b.$parent}__list {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    margin-top: 15px,
+                )
+            );
+        }
+    }
+
+    &__list {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                column-gap: 10,
+            )
+        );
+
+        &-item {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    max-width: 120px,
+                )
+            );
+        }
+
+        &-text {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    padding: 0,
+                )
+            );
+        }
+    }
+}

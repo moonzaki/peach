@@ -1,0 +1,83 @@
+@forward "~common/placeholders";
+
+$parent: "corp-slider";
+$slider: "swiper";
+
+.#{$parent} {
+    @extend %flex-col;
+    max-width: 1110px;
+    margin: 0 auto;
+
+    &__head {
+        @extend %flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0 0 58px 0;
+    }
+
+    &__control {
+        @extend %flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        &-prev {
+            display: block;
+            width: 56px;
+            height: 56px;
+            @extend %background--primary-white;
+            background: url("../icons/arrow-corp-slider.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform: rotate(180deg);
+            cursor: pointer;
+        }
+
+        &-next {
+            display: block;
+            width: 56px;
+            height: 56px;
+            @extend %background--primary-white;
+            background: url("../icons/arrow-corp-slider.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+    }
+
+    &__main {
+        .#{$slider} {
+            max-width: 1110px;
+            width: 100%;
+
+            &-slide {
+                max-width: 1110px;
+
+                img {
+                    max-width: 1110px;
+                    width: 100%;
+                }
+            }
+
+            &-pagination {
+                position: static;
+                padding: 28px 0 20px 0;
+                margin: 0;
+                &-bullet {
+                    padding: 0;
+                    width: calc((100% - 4 * 10px) / 5);
+                    border-radius: 0;
+                }
+
+                &-bullet-active {
+                    @extend %background--origin-red;
+                }
+            }
+        }
+    }
+}

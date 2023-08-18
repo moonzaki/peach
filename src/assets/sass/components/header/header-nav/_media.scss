@@ -1,0 +1,41 @@
+@use "~common/mixins" as m;
+@use "./../header" as h;
+
+.#{h.$parent}-nav {
+    &__list {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                flex-wrap: wrap,
+                column-gap: 10px,
+                row-gap: 5px,
+            )
+        );
+    }
+
+    &__item {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                width: fit-content,
+            )
+        );
+
+        a {
+            @include m.media(
+                (
+                    max: 480,
+                ),
+                (
+                    display: flex,
+                    font-size: 14px,
+                    line-height: 114.286%,
+                )
+            );
+        }
+    }
+}

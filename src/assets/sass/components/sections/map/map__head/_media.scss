@@ -1,0 +1,44 @@
+@use "~common/mixins" as m;
+@use "./../map" as map;
+
+.#{map.$parent} {
+    &__head {
+        @include m.media(
+            (
+                min: 1920,
+            ),
+            (
+                padding: 0 70px,
+            )
+        );
+
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                // flex-direction: column,
+                // align-items: center,
+                align-items: stretch,
+                width: 100%,
+                row-gap: 18px,
+                // padding: 16px 5px 21px,
+                padding: 0 5px 0,
+                height: 95px,
+                box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.06)
+            )
+        );
+
+        &-title {
+            @include m.media(
+                (
+                    max: 800,
+                ),
+                (
+                    padding: 16px 0 0,
+                    gap: 5px,
+                )
+            );
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use "~common/mixins" as m;
+@forward "~common/placeholders";
+$parent: "summary";
+
+.#{$parent} {
+    @extend %flex;
+    flex-wrap: wrap;
+    column-gap: 185px;
+    row-gap: 80px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 889px;
+    margin: 0 auto;
+
+    &__item {
+        @extend %flex-col;
+        gap: 4px;
+        width: fit-content;
+
+        &-title {
+            @extend %flex;
+            gap: 10px;
+            margin: 0;
+            line-height: 80%;
+            opacity: 0.95;
+            @extend %color--origin-red;
+
+            span {
+                @extend %proxima-black;
+                font-size: 64px;
+                @include m.adaptiv-font(64, 30);
+                font-weight: 900;
+                line-height: 100%;
+            }
+
+            strong {
+                letter-spacing: 1px;
+            }
+        }
+
+        &-text {
+            margin: 0;
+            line-height: 150%;
+        }
+    }
+
+    &__item:nth-child(5) {
+        p {
+            line-height: 120%;
+        }
+    }
+}

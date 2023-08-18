@@ -1,0 +1,62 @@
+@use "./../../../../../node_modules/rfs/scss" as rfs;
+@use "./../mixins" as m;
+@forward "./../placeholders";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+header,
+footer {
+    flex: 0 0 auto;
+}
+
+main {
+    @extend %flex-col;
+    row-gap: 100px;
+    flex: 1 0 auto;
+    overflow: hidden;
+
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            row-gap: 50px,
+        )
+    );
+}
+
+header,
+main,
+footer {
+    width: 100vw;
+}
+
+header {
+    .wrapper {
+        z-index: auto;
+    }
+}
+
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            padding: 0 15px,
+        )
+    );
+}

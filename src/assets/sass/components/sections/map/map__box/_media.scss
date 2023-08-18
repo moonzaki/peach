@@ -1,0 +1,30 @@
+@use "~common/mixins" as m;
+@use "./../map" as map;
+
+.#{map.$parent} {
+    &__box {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                margin-top: 0,
+                margin-bottom: 0,
+            )
+        );
+
+        img {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    max-width: 862px,
+                    height: 372px,
+                    // transform: translateX(30px),
+                    transform: translate(60px, 40px) scale(1.175),
+                )
+            );
+        }
+    }
+}

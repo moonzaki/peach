@@ -1,0 +1,28 @@
+@use "~rfs/scss" as rfs;
+@forward "~common/placeholders";
+
+$parent: "mission";
+
+.#{$parent} {
+    @extend %flex-col;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    @include rfs.padding(139px 68px 140px 72px);
+    text-align: center;
+    background: url("../images/sections/mission/mission-bg.jpg");
+    box-sizing: border-box;
+
+    &__title {
+        @extend %color--origin-white;
+        margin: 0;
+    }
+
+    &__subtitle {
+        @extend %proxima-regular;
+        font-weight: 400;
+        line-height: 150%;
+        @extend %color--origin-white;
+        margin: 0;
+    }
+}

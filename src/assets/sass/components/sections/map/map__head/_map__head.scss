@@ -1,0 +1,36 @@
+@use "~rfs/scss" as rfs;
+@use "./../map" as map;
+
+.#{map.$parent} {
+    &__head {
+        @extend %flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // align-items: center;
+        align-items: stretch;
+        row-gap: 20px;
+        width: 1250px;
+        // height: 80px;
+        width: 100%;
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.06);
+        @include rfs.padding(0 70px);
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &-title {
+            @extend %flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            @include rfs.padding(28px 0);
+
+            &--open {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

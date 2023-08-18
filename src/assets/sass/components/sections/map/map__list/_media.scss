@@ -1,0 +1,124 @@
+@use "./../map" as map;
+@use "~common/mixins" as m;
+
+.#{map.$parent} {
+    &__list {
+        @include m.media(
+            (
+                max: 1023,
+            ),
+            (
+                gap: 30px,
+            )
+        );
+
+        @include m.media(
+            (
+                max: 480,
+            ),
+            (
+                gap: 17px,
+                margin-bottom: 4px,
+            )
+        );
+
+        p {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    width: 100%,
+                    font-size: 14px,
+                    line-height: 114.286%,
+                )
+            );
+        }
+
+        &--open {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    width: 100%,
+                    flex-wrap: wrap,
+                    opacity: 1,
+                    padding-bottom: 19px,
+                )
+            );
+
+            .#{map.$parent}__list-item {
+                @include m.media(
+                    (
+                        max: 1023,
+                    ),
+                    (
+                        justify-content: flex-start,
+                        padding: 0 0 21px,
+                    )
+                );
+
+                p {
+                    @include m.media(
+                        (
+                            max: 1023,
+                        ),
+                        (
+                            font-family: "Proxima Nova Rg",
+                        )
+                    );
+                }
+                @include m.media(
+                    (
+                        max: 800,
+                    ),
+                    (
+                        padding: 0,
+                        justify-content: flex-start,
+                    )
+                );
+            }
+        }
+
+        &-item {
+            @include m.media(
+                (
+                    max: 1023,
+                ),
+                (
+                    width: fit-content,
+                )
+            );
+
+            @include m.media(
+                (
+                    max: 800,
+                ),
+                (
+                    padding: 0 0 21px,
+                )
+            );
+
+            @include m.media(
+                (
+                    max: 480,
+                ),
+                (
+                    width: calc((100% - 2 * 30px) / 3),
+                )
+            );
+        }
+
+        &-item ul:last-child {
+            @include m.media(
+                (
+                    min: 1023,
+                ),
+                (
+                    display: none,
+                )
+            );
+        }
+    }
+}

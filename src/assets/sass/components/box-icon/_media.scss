@@ -1,0 +1,24 @@
+@use "~common/mixins" as m;
+
+.box-icon {
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            max-width: 80px,
+            max-height: 80px,
+        )
+    );
+
+    img {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                max-height: 34px,
+            )
+        );
+    }
+}

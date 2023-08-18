@@ -1,0 +1,27 @@
+@forward "~common/placeholders";
+
+$parent: "sublist-popup";
+
+.#{$parent} {
+    @extend %flex-col;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-top: 18px;
+    box-sizing: border-box;
+
+    &__item {
+        p {
+            font-family: "Proxima Nova Rg";
+            font-weight: 400;
+            line-height: 111.111%;
+        }
+    }
+
+    &--open {
+        display: flex;
+        gap: 20px;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,26 @@
+@use "sublist-popup" as sp;
+@use "~common/mixins" as m;
+
+.#{sp.$parent} {
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            gap: 17px,
+        )
+    );
+    &__item {
+        p {
+            @include m.media(
+                (
+                    max: 768,
+                ),
+                (
+                    font-size: 14px,
+                    line-height: 100%,
+                )
+            );
+        }
+    }
+}

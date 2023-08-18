@@ -1,0 +1,29 @@
+@use "./../map" as map;
+
+.#{map.$parent} {
+    &__box {
+        position: relative;
+        // @include rfs.margin-top(90px);
+        @extend %flex;
+        margin-top: 89px;
+        margin-bottom: 4px;
+        opacity: 1;
+        transition: opacity 0.3s linear;
+
+        img {
+            display: block;
+            // margin: 0 auto;
+            transform: translateX(30px);
+        }
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none; /* IE и Edge */
+        scrollbar-width: none; /* Firefox */
+
+        &--hidden {
+            opacity: 0.2;
+        }
+    }
+}

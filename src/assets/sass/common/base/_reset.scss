@@ -1,0 +1,45 @@
+@use "./../variables" as v;
+@forward "./../placeholders";
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @extend %proxima-regular;
+    @extend %fw-400;
+    @extend %color--origin-dark;
+    @extend %background--origin-white;
+    box-sizing: border-box;
+    height: 100%;
+
+    a {
+        @extend %color--origin-dark;
+        text-decoration: none;
+
+        &:visited {
+            @extend %color--origin-dark;
+        }
+    }
+}
+
+@for $i from 1 through 8 {
+    h#{$i} {
+        @extend %proxima-semibold;
+        @extend %fw-600;
+        @extend %color--origin-dark;
+    }
+}
+
+button {
+    @extend %proxima-semibold;
+    @extend %fw-600;
+    @extend %color--origin-white;
+}

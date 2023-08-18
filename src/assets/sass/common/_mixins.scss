@@ -1,0 +1,116 @@
+@use "./variables" as v;
+@import "~rfs/scss";
+
+// $maxWidth: 1280;
+$maxWidth: 1920;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(
+        #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+    );
+}
+
+@mixin set_modifier_tag() {
+    @each $name, $value in v.$colors {
+        %color--#{"" + $name} {
+            color: #{$value};
+        }
+
+        %background--#{"" + $name} {
+            background: #{$value};
+        }
+
+        %border--#{"" + $name} {
+            border-color: #{$value};
+        }
+    }
+}
+
+@mixin css_props($map) {
+    @each $key, $value in $map {
+        // @if ($key == "margin") {
+        //     @include margin($value);
+        // } @else if ($key == "margin-top") {
+        //     @include margin-top($value);
+        // } @else if ($key == "margin-right") {
+        //     @include margin-right($value);
+        // } @else if ($key == "margin-bottom") {
+        //     @include margin-bottom($value);
+        // } @else if ($key == "margin-left") {
+        //     @include margin-left($value);
+        // } @else if ($key == "padding") {
+        //     @include padding($value);
+        // } @else if ($key == "padding-top") {
+        //     @include padding-top($value);
+        // } @else if ($key == "padding-right") {
+        //     @include padding-right($value);
+        // } @else if ($key == "padding-bottom") {
+        //     @include padding-bottom($value);
+        // } @else if ($key == "padding-left") {
+        //     @include padding-left($value);
+        // } @else if ($key == "include-font") {
+        //     @include font-size($value);
+        // } @else {
+        //     #{$key}: $value;
+        // }
+        #{$key}: $value;
+    }
+}
+
+@mixin media($display, $options) {
+    @if (length($display) ==1) {
+        @each $disp-key, $disp-value in $display {
+            @media screen and (#{$disp-key}-width: #{$disp-value + 'px'}) {
+                @include css_props($options);
+            }
+        }
+    } @else {
+        $min-width: null;
+        $max-width: null;
+        $max-orient: null;
+
+        @each $disp-key, $disp-value in $display {
+            @if ($disp-key == "min") {
+                $min-width: (
+                    #{#{$disp-key}-width + " : " + $disp-value + "px"}
+                );
+            } @else if ($disp-key == "max") {
+                $max-width: (
+                    #{#{$disp-key}-width + " : " + $disp-value + "px"}
+                );
+            } @else if ($disp-key == "orientation") {
+                $max-orient: (#{#{$disp-key} + " : " + #{$disp-value} + ""});
+            }
+        }
+        @if (
+            $min-width != null and $max-width != null and $max-orient != null
+        ) {
+            @media screen and ($min-width) and ($max-width) and ($max-orient) {
+                @include css_props($options);
+            }
+        }
+        @if (
+            $min-width == null and $max-width != null and $max-orient != null
+        ) {
+            @media screen and ($max-width) and ($max-orient) {
+                @include css_props($options);
+            }
+        }
+        @if (
+            $min-width != null and $max-width == null and $max-orient != null
+        ) {
+            @media screen and ($min-width) and ($max-orient) {
+                @include css_props($options);
+            }
+        }
+        @if (
+            $min-width != null and $max-width != null and $max-orient == null
+        ) {
+            @media screen and ($min-width) and ($max-width) {
+                @include css_props($options);
+            }
+        }
+    }
+}

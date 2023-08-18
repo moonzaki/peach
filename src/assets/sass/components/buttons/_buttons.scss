@@ -1,0 +1,21 @@
+@forward "~common/placeholders";
+
+$parent: "button";
+
+.#{$parent} {
+    display: flex;
+    padding: 18px 28px;
+    max-width: 110px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 111.111%;
+    border-radius: 8px;
+    border: none;
+    @extend %background--primary-red;
+    @extend %color--origin-white;
+    transition: background 0.3s linear;
+    cursor: pointer;
+    &--hover {
+        @extend %background--tretiary-red;
+    }
+}

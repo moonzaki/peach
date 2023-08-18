@@ -1,0 +1,14 @@
+@use "~common/mixins" as m;
+@use "./buttons" as btn;
+
+.#{btn.$parent} {
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            font-size: 16px,
+            padding: 7px 28px,
+        )
+    );
+}

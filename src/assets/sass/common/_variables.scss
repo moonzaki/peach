@@ -1,0 +1,29 @@
+// COLORS PALITE
+
+$origin-black: #000000;
+$origin-white: #ffffff;
+$primary-white: #f0f0f0;
+$secondary-white: #f2f2f2;
+$origin-dark: #444444;
+$primary-grey: #b1b1b1;
+$secondary-grey: #d9d9d9;
+$origin-red: #a30c33;
+$primary-red: #b01736;
+$secondary-red: #cb0f41;
+$tretiary-red: #cb0f41;
+$origin-dark-blue: #2d3653;
+
+$colors: (
+    origin-black: $origin-black,
+    origin-white: $origin-white,
+    primary-white: $primary-white,
+    secondary-white: $secondary-white,
+    origin-dark: $origin-dark,
+    primary-grey: $primary-grey,
+    secondary-grey: $secondary-grey,
+    origin-red: $origin-red,
+    primary-red: $primary-red,
+    secondary-red: $secondary-red,
+    tretiary-red: $tretiary-red,
+    origin-dark-blue: $origin-dark-blue,
+);

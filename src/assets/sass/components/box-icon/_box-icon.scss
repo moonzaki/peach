@@ -1,0 +1,34 @@
+@forward "~common/placeholders";
+
+.box-icon {
+    position: relative;
+    @extend %flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 110px;
+    max-height: 110px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+
+    &--sg {
+        width: 56px;
+        height: 56px;
+    }
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        @extend %background--origin-black;
+        opacity: 0.05;
+        border-radius: 50%;
+    }
+
+    img {
+        max-height: 48px;
+    }
+}

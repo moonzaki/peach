@@ -1,0 +1,42 @@
+@use "~common/mixins" as m;
+@use "mission" as mis;
+
+.#{mis.$parent} {
+    @include m.media(
+        (
+            min: 1920,
+        ),
+        (
+            padding: 139px 68px 140px 72px,
+        )
+    );
+    @include m.media(
+        (
+            max: 768,
+        ),
+        (
+            gap: 20px,
+        )
+    );
+
+    @include m.media(
+        (
+            max: 480,
+        ),
+        (
+            gap: 10px,
+            padding: 32px 5px,
+        )
+    );
+
+    &__subtitle {
+        @include m.media(
+            (
+                max: 768,
+            ),
+            (
+                line-height: 130%,
+            )
+        );
+    }
+}

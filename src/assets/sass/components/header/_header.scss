@@ -1,0 +1,13 @@
+$parent: "header";
+@use "~common/variables" as v;
+@use "~rfs/scss" as rfs;
+@forward "~common/placeholders";
+
+.#{$parent} {
+    @extend %flex;
+    justify-content: space-between;
+    align-items: center;
+    @include rfs.padding(28px 70px);
+    border: 1px solid v.$secondary-grey;
+    box-sizing: border-box;
+}
